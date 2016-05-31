@@ -75,7 +75,8 @@ extension HomeViewController : PresentedProtocol {
     func getStartRect(indexPath : NSIndexPath) -> CGRect {
         
         guard let cell = collectionView?.cellForItemAtIndexPath(indexPath) as? HomeCell else {
-            return CGRectZero
+            
+            return CGRectMake(UIScreen.mainScreen().bounds.width * 0.5, UIScreen.mainScreen().bounds.height * 0.5, 0, 0)
         }
         return cell.imageView!.convertRect(cell.imageView!.bounds, toView: UIApplication.sharedApplication().keyWindow)
     }
